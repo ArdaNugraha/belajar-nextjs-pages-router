@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { Geist, Geist_Mono } from "next/font/google";
-import styles from "@/styles/Home.module.css";
+// import styles from "@/styles/Home.module.css";
 import Link from "next/link";
 
 const geistSans = Geist({
@@ -31,15 +31,41 @@ export default function RootLayout({
       <div
         className={`${geistSans.variable} ${geistMono.variable} flex flex-col min-h-screen`}
       >
-        <header className="bg-blue-500 text-white p-4">
+        <header className="bg-blue-400 text-white p-4">
           <div className="container mx-auto flex justify-between items-center">
             <h1 className="text-xl font-bold">Next.js App</h1>
             <ul className="flex space-x-4">
               <li>
-                <Link href="/">Home</Link>
+                <Link
+                  className="text-gray-800 hover:text-white font-medium transition-colors duration-200"
+                  href="/"
+                >
+                  Home
+                </Link>
               </li>
               <li>
-                <Link href="/about">About</Link>
+                <Link
+                  className="text-gray-800 hover:text-white font-medium transition-colors duration-200"
+                  href="/about"
+                >
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="text-gray-800 hover:text-white font-medium transition-colors duration-200"
+                  href="/about/me"
+                >
+                  Me
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="text-gray-800 hover:text-white font-medium transition-colors duration-200"
+                  href="/user/arda"
+                >
+                  User
+                </Link>
               </li>
             </ul>
           </div>
