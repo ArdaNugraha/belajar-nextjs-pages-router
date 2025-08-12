@@ -67,6 +67,14 @@ export default function RootLayout({
                   User
                 </Link>
               </li>
+              <li>
+                <Link
+                  className="text-gray-800 hover:text-white font-medium transition-colors duration-200"
+                  href="/notes/server"
+                >
+                  Notes
+                </Link>
+              </li>
             </ul>
           </div>
         </header>
