@@ -1,3 +1,27 @@
+// import Image from "next/image";
+// import HeavyComponent from "@/components/HeavyComponent";
+import dynamic from "next/dynamic";
+import { useState } from "react";
+
+const HeavyComponent = dynamic(() => import("@/components/HeavyComponent"), {
+  ssr: false,
+  loading: () => <p>Loading...</p>,
+});
+
 export default function About() {
-  return <div>About Page</div>;
+  const [show, setShow] = useState(false);
+  return (
+    <div>
+      <h1>About Page</h1>
+      <button onClick={() => setShow(true)}>Show Component</button>
+      {/* <Image
+        alt="picture of car"
+        src="/raw-car-photo.jpg"
+        width="1000"
+        height="2000"
+        priority
+      /> */}
+      {show && <HeavyComponent />}
+    </div>
+  );
 }
